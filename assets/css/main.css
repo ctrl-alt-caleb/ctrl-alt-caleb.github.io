@@ -126,9 +126,9 @@ input, select, textarea {
 
 	body, input, select, textarea {
 		font-family: "Courier New", monospace, sans-serif;
-		font-size: 17pt;
+		font-size: 15pt;
 		font-weight: 300;
-		line-height: 1.65;
+		line-height: 1.40;
 	}
 
 		@media screen and (max-width: 1680px) {
@@ -3277,7 +3277,7 @@ input, select, textarea {
 		}
 
 		#nav + #main {
-			padding-top: 4.25em;
+			padding-top: 2em;
 		}
 
 		#nav ul {
