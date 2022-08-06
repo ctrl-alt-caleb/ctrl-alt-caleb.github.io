@@ -1,0 +1,282 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Caleb</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header" class="alt">
+						<h1>Hello!</h1>
+						<h1>I'm Caleb</h1>
+						<span class="icon"><img src="images/programming4.gif" alt="" /></span>
+						<p>I like to make fun and interesting projects with code.<br /></p>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul>
+							<li><a href="#intro" class="active">Introduction</a></li>
+							<li><a href="#first">First Section</a></li>
+							<li><a href="#second">Second Section</a></li>
+							<li><a href="#footer">Contact</a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Introduction -->
+							<section id="intro" class="main">
+								<div class="spotlight">
+									<div class="content">
+										<header class="major">
+											<h2>About Me</h2>
+										</header>
+										<p>Sed lorem ipsum dolor sit amet nullam consequat feugiat consequat magna
+										adipiscing magna etiam amet veroeros. Lorem ipsum dolor tempus sit cursus.
+										Tempus nisl et nullam lorem ipsum dolor sit amet aliquam.</p>
+										<ul class="actions">
+											<li><a href="#" class="button">Learn More</a></li>
+										</ul>
+									</div>
+									<span class="image"><img src="images/pfp.jpg" alt="" /></span>
+								</div>
+							</section>
+						<!-- Get Started -->
+						<section id="cta" class="main special">
+							<header class="major">
+								<h2></h2>
+								<p></p>
+							</header>
+							<footer class="major">
+								<ul class="actions special">
+									<li><a href="generic.html" class="button primary">Get Started</a></li>
+									<li><a href="generic.html" class="button">Learn More</a></li>
+								</ul>
+							</footer>
+						</section id = "second" class = "main special">
+						<header class = "major">
+							<!--added from unity build-->
+							<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+							<title>Unity WebGL Player | Drone Attack</title>
+							<link rel="shortcut icon" href="TemplateData/favicon.ico">
+							<link rel="stylesheet" href="TemplateData/style.css">
+						</header class = "major">
+						<section id ="game">
+							<div id="unity-container" class="unity-desktop">
+							  <canvas id="unity-canvas" width=1280 height=720></canvas>
+							  <div id="unity-loading-bar">
+								<div id="unity-logo"></div>
+								<div id="unity-progress-bar-empty">
+								  <div id="unity-progress-bar-full"></div>
+								</div>
+							  </div>
+							  <div id="unity-warning"> </div>
+							  <div id="unity-footer">
+								<div id="unity-webgl-logo"></div>
+								<div id="unity-fullscreen-button"></div>
+								<div id="unity-build-title">Drone Attack</div>
+							  </div>
+							</div>
+							<script>
+							  var container = document.querySelector("#unity-container");
+							  var canvas = document.querySelector("#unity-canvas");
+							  var loadingBar = document.querySelector("#unity-loading-bar");
+							  var progressBarFull = document.querySelector("#unity-progress-bar-full");
+							  var fullscreenButton = document.querySelector("#unity-fullscreen-button");
+							  var warningBanner = document.querySelector("#unity-warning");
+						
+							  // Shows a temporary message banner/ribbon for a few seconds, or
+							  // a permanent error message on top of the canvas if type=='error'.
+							  // If type=='warning', a yellow highlight color is used.
+							  // Modify or remove this function to customize the visually presented
+							  // way that non-critical warnings and error messages are presented to the
+							  // user.
+							  function unityShowBanner(msg, type) {
+								function updateBannerVisibility() {
+								  warningBanner.style.display = warningBanner.children.length ? 'block' : 'none';
+								}
+								var div = document.createElement('div');
+								div.innerHTML = msg;
+								warningBanner.appendChild(div);
+								if (type == 'error') div.style = 'background: red; padding: 10px;';
+								else {
+								  if (type == 'warning') div.style = 'background: yellow; padding: 10px;';
+								  setTimeout(function() {
+									warningBanner.removeChild(div);
+									updateBannerVisibility();
+								  }, 5000);
+								}
+								updateBannerVisibility();
+							  }
+						
+							  var buildUrl = "Build";
+							  var loaderUrl = buildUrl + "/Drone Attack v1.4.1.loader.js";
+							  var config = {
+								dataUrl: buildUrl + "/Drone Attack v1.4.1.data",
+								frameworkUrl: buildUrl + "/Drone Attack v1.4.1.framework.js",
+								codeUrl: buildUrl + "/Drone Attack v1.4.1.wasm",
+								streamingAssetsUrl: "StreamingAssets",
+								companyName: "c4leb",
+								productName: "Drone Attack",
+								productVersion: "1.4",
+								showBanner: unityShowBanner,
+							  };
+						
+							  // By default Unity keeps WebGL canvas render target size matched with
+							  // the DOM size of the canvas element (scaled by window.devicePixelRatio)
+							  // Set this to false if you want to decouple this synchronization from
+							  // happening inside the engine, and you would instead like to size up
+							  // the canvas DOM size and WebGL render target sizes yourself.
+							  // config.matchWebGLToCanvasSize = false;
+						
+							  if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+								// Mobile device style: fill the whole browser client area with the game canvas:
+						
+								var meta = document.createElement('meta');
+								meta.name = 'viewport';
+								meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
+								document.getElementsByTagName('head')[0].appendChild(meta);
+								container.className = "unity-mobile";
+						
+								// To lower canvas resolution on mobile devices to gain some
+								// performance, uncomment the following line:
+								// config.devicePixelRatio = 1;
+						
+								canvas.style.width = window.innerWidth + 'px';
+								canvas.style.height = window.innerHeight + 'px';
+							  } else {
+								// Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
+						
+								canvas.style.width = "1280px";
+								canvas.style.height = "720px";
+							  }
+						
+							  canvas.style.background = "url('" + buildUrl + "/Drone Attack v1.4.1.jpg') center / cover";
+							  loadingBar.style.display = "block";
+						
+							  var script = document.createElement("script");
+							  script.src = loaderUrl;
+							  script.onload = () => {
+								createUnityInstance(canvas, config, (progress) => {
+								  progressBarFull.style.width = 100 * progress + "%";
+								}).then((unityInstance) => {
+								  loadingBar.style.display = "none";
+								  fullscreenButton.onclick = () => {
+									unityInstance.SetFullscreen(1);
+								  };
+								}).catch((message) => {
+								  alert(message);
+								});
+							  };
+							  document.body.appendChild(script);
+							</script>
+						  <section id ="game">
+						<!-- First Section -->
+							<section id="first" class="main special">
+								<header class="major">
+									<h2>Magna veroeros</h2>
+								</header>
+								<ul class="features">
+									<li>
+										<span class="icon solid major style1 fa-code"></span>
+										<h3>Ipsum consequat</h3>
+										<p>Sed lorem amet ipsum dolor et amet nullam consequat a feugiat consequat tempus veroeros sed consequat.</p>
+									</li>
+									<li>
+										<span class="icon major style3 fa-copy"></span>
+										<h3>Amed sed feugiat</h3>
+										<p>Sed lorem amet ipsum dolor et amet nullam consequat a feugiat consequat tempus veroeros sed consequat.</p>
+									</li>
+								</ul>
+								<footer class="major">
+									<ul class="actions special">
+										<li><a href="generic.html" class="button">Learn More</a></li>
+									</ul>
+								</footer>
+							</section>
+							<section id="second" class="main special">
+								<header class="major">
+									<h2>Ipsum consequat</h2>
+									<p>Donec imperdiet consequat consequat. Suspendisse feugiat congue<br />
+									posuere. Nulla massa urna, fermentum eget quam aliquet.</p>
+								</header>
+								<ul class="statistics">
+									<li class="style1">
+										<span class="icon solid fa-code-branch"></span>
+										<strong>5,120</strong> Etiam
+									</li>
+									<li class="style2">
+										<span class="icon fa-folder-open"></span>
+										<strong>8,192</strong> Magna
+									</li>
+									<li class="style3">
+										<span class="icon solid fa-signal"></span>
+										<strong>2,048</strong> Tempus
+									</li>
+									<li class="style4">
+										<span class="icon solid fa-laptop"></span>
+										<strong>4,096</strong> Aliquam
+									</li>
+									<li class="style5">
+										<span class="icon fa-gem"></span>
+										<strong>1,024</strong> Nullam
+									</li>
+								</ul>
+								<p class="content">Nam elementum nisl et mi a commodo porttitor. Morbi sit amet nisl eu arcu faucibus hendrerit vel a risus. Nam a orci mi, elementum ac arcu sit amet, fermentum pellentesque et purus. Integer maximus varius lorem, sed convallis diam accumsan sed. Etiam porttitor placerat sapien, sed eleifend a enim pulvinar faucibus semper quis ut arcu. Ut non nisl a mollis est efficitur vestibulum. Integer eget purus nec nulla mattis et accumsan ut magna libero. Morbi auctor iaculis porttitor. Sed ut magna ac risus et hendrerit scelerisque. Praesent eleifend lacus in lectus aliquam porta. Cras eu ornare dui curabitur lacinia.</p>
+								<footer class="major">
+									<ul class="actions special">
+										<li><a href="generic.html" class="button">Learn More</a></li>
+									</ul>
+								</footer>
+							</section>
+
+
+
+						
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+					
+						<section>
+							<h2>Contact Information</h2>
+							<dl class="alt">
+								<dt>Location</dt>
+								<dd>San Antonio, TX &bull; USA</dd>
+								<dt>Phone</dt>
+								<dd>(808) 798-6486</dd>
+								<dt>Email</dt>
+								<dd><a href="mailto: caleb.b.hebert@outlook.com">caleb.b.hebert@outlook.com</a></dd>
+							</dl>
+							<ul class="icons">
+								<li><a href="https://github.com/ctrl-alt-caleb" class="icon brands fa-github alt"><span class="label">GitHub</span></a></li>
+								<li><a href="https://www.linkedin.com/in/calebhebert/" class="icon brands fa-linkedin alt"><span class="label">GitHub</span></a></li>
+							</ul>
+						</section>
+						<p class="copyright">&copy; 2022 Caleb Hebert</a>.</p>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
