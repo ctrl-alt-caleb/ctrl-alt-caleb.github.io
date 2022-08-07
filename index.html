@@ -72,13 +72,28 @@
 						<header class = "major">
 							
 							<!--added from unity build-->
+
+							<div class="webgl-content">
+								<div id="gameContainer" style="width: 960px; height: 600px"></div>
+								<button type="button" style="z-index:10000" onclick="runUnityLoader(); style.display='none';">Play</button>
+								<div class="footer">
+								  <div class="webgl-logo"></div>
+								  <div class="fullscreen" onclick="window.gameInstance.SetFullscreen(1)"></div>
+								  <div class="title">Drone Attack</div>
+								</div>
+							  </div>
+
+
+
+
+
 							<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 							<title>Unity WebGL Player | Drone Attack</title>
 							<link rel="shortcut icon" href="TemplateData/favicon.ico">
 							<link rel="stylesheet" href="TemplateData/style.css">
 						</header class = "major">
 						<section id ="game" class = "main special">
-							<div id="unity-container" style = "position: absolute; right:50%; top:250; transform:translate(50%,-50%); height:10%; aspect-ratio:16/10;">
+							<div id="unity-container" style = "position: absolute; right:50%; top:250; transform:translate(50%,-50%); height:10%; aspect-ratio:16/9;">
 							  <canvas id="unity-canvas" width=1280height=720></canvas>
 							  <div id="unity-loading-bar">
 								<div id="unity-logo"></div>
@@ -254,4 +269,11 @@
 			<script src="assets/js/main.js"></script>
 
 	</body>
+	<script>
+		var gameInstance;
+		 
+		function runUnityLoader() {
+		  gameInstance = UnityLoader.instantiate("gameContainer", "Build/portalsweb.json", {onProgress: UnityProgress});
+		}
+		</script>
 </html>
