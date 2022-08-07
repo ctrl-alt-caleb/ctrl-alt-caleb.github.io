@@ -72,21 +72,6 @@
 						<header class = "major">
 							
 							<!--added from unity build-->
-
-							<div class="webgl-content">
-								<div id="gameContainer" style="width: 960px; height: 600px"></div>
-								<button type="button" style="z-index:10000" onclick="runUnityLoader(); style.display='none';">Play</button>
-								<div class="footer">
-								  <div class="webgl-logo"></div>
-								  <div class="fullscreen" onclick="window.gameInstance.SetFullscreen(1)"></div>
-								  <div class="title">Drone Attack</div>
-								</div>
-							  </div>
-
-
-
-
-
 							<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 							<title>Unity WebGL Player | Drone Attack</title>
 							<link rel="shortcut icon" href="TemplateData/favicon.ico">
@@ -267,13 +252,5 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-
 	</body>
-	<script>
-		var gameInstance;
-		 
-		function runUnityLoader() {
-		  gameInstance = UnityLoader.instantiate("gameContainer", "Build/portalsweb.json", {onProgress: UnityProgress});
-		}
-		</script>
 </html>
