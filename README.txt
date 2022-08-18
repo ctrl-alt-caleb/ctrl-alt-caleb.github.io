@@ -1,3 +1,4 @@
+This website was created to host personal projects/resume/info using a modified licensed template. New website coming soon.
 
 Credits:
 
